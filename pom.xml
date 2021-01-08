@@ -11,7 +11,7 @@
     <groupId>com.jun</groupId>
     <artifactId>project</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <packaging>jar</packaging>
+    <packaging>war</packaging>
     <name>project</name>
     <description>first project on EC2</description>
 
