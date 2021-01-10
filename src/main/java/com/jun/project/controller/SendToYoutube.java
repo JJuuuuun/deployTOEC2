@@ -20,15 +20,28 @@ public class SendToYoutube {
         return "redirect:" + targetURL.getUrl();
     }
 
+    @GetMapping("/conference")
+    public String sendToYoutube2() {
+        return "redirect:" + targetURL.getConferUrl();
+    }
+
     @GetMapping("/set")
     public String setURL() {
         return "/setURL.html";
     }
 
     @PostMapping("/set")
-    public String ok(@RequestParam(value = "url") String url) {
-        targetURL.setUrl(url);
-        System.out.println(url);
+    public String ok(@RequestParam(value = "url", required = false) String url,
+                     @RequestParam(value = "conferUrl", required =false) String conferUrl) {
+        if (!"".equals(url)) {
+            System.out.println(url);
+            targetURL.setUrl(url);
+        }
+
+        if (!"".equals(conferUrl)) {
+            System.out.println(conferUrl);
+            targetURL.setConferUrl(conferUrl);
+        }
         return "/ok.html";
     }
 }
