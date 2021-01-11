@@ -42,6 +42,6 @@ public class SendToYoutube {
             System.out.println(conferUrl);
             targetURL.setConferUrl(conferUrl);
         }
-        return "/ok.html";
+        return "redirect:/ok.html";
     }
 }
